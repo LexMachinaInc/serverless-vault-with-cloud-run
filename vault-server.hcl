@@ -4,6 +4,7 @@ disable_clustering           = true
 ui                           = true
 max_lease_ttl                = "120h"
 default_lease_ttl            = "24h"
+api_addr                     = "https://vault.deuslex.net"
 
 listener "tcp" {
   address     = "0.0.0.0:8200"
@@ -12,7 +13,7 @@ listener "tcp" {
 
 seal "gcpckms" {
   key_ring   = "vault_keys"
-  crypto_key = "vault-testing-0"
+  crypto_key = "vault-prod"
   region     = "global"
 }
 
